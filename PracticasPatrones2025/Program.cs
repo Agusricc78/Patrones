@@ -1,12 +1,16 @@
 ﻿using PracticasPatrones2025.Abstract_Factory;
+using PracticasPatrones2025.Archivos;
 using PracticasPatrones2025.Composite;
 using PracticasPatrones2025.FactoryMethod;
+using PracticasPatrones2025.Observador;
 using PracticasPatrones2025.Singleton;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IComponent = PracticasPatrones2025.Archivos.IComponent;
 
 namespace PracticasPatrones2025
 {
@@ -101,33 +105,79 @@ namespace PracticasPatrones2025
 
               }
               */
+            /*
+                IEmpleado root = new Jefe("Root");
 
-            IEmpleado root = new Jefe("Root");
+                IEmpleado empleado1 = new Empleado("Empleado 1");
+                IEmpleado empleado2 = new Empleado("Empleado 2");
+                IEmpleado empleado3 = new Empleado("Empleado 3");
+                IEmpleado empleado4 = new Empleado("Empleado 4");
 
-            IEmpleado empleado1 = new Empleado("Empleado 1");
-            IEmpleado empleado2 = new Empleado("Empleado 2");
-            IEmpleado empleado3 = new Empleado("Empleado 3");
-            IEmpleado empleado4 = new Empleado("Empleado 4");
+                IEmpleado GerenteSistemas = new Jefe("Gerente Sistemas");
+                IEmpleado GerenteGeneral = new Jefe("Gerente General");
+                IEmpleado GerenteVentas = new Jefe("Gerente Ventas");
+
+                GerenteSistemas.AgregarHijo(empleado1);
+                GerenteSistemas.AgregarHijo(empleado2);
+                GerenteVentas.AgregarHijo(empleado3);
+                GerenteVentas.AgregarHijo(empleado4);
+                GerenteGeneral.AgregarHijo(GerenteSistemas);
+                GerenteGeneral.AgregarHijo(GerenteVentas);
+
+                root.AgregarHijo(GerenteGeneral);
+
+
+                Console.WriteLine("Estructura de empleados:" + root.ObtenerCantidadHijos());
+                Console.WriteLine("Cantidad de empleados de el gerente general:" + GerenteGeneral.ObtenerCantidadHijos());
+                Console.WriteLine("Cantidad de empleados de el gerente de sistemas:" + GerenteSistemas.ObtenerCantidadHijos());
+
+                root.MostrarJerarquia();
+
+                */
+            /*
+                        IComponent root = new Directorio("Root");
+
+                        IComponent archivo1 = new Directorio("archivo1");
+                        IComponent archivo2= new Directorio("archivo2");
+                        IComponent archivo3= new Directorio("archivo3");
+
+                        IComponent archivo4 = new Directorio("archivo4");
+
+
+                        IComponent carpeta1 = new Directorio("carpeta1");
+                        IComponent carpeta2 = new Directorio("carpeta2");
+                        IComponent carpeta3 = new Directorio("carpeta3");
+
+                        carpeta3.AgregarHijos(archivo1);
+                        carpeta2.AgregarHijos(archivo2);
+                        carpeta1.AgregarHijos(carpeta2);
+                        carpeta1.AgregarHijos(carpeta3);
+
+                       Console.WriteLine("la cantidad de hijos de la carpeta1:"+ carpeta1.ObtenerCantidadHijos());
+                        Console.WriteLine("La cantidad de hijos de la carpeta 2 es de :" + carpeta2.ObtenerCantidadHijos());
+
+
+
+                        */
             
-            IEmpleado GerenteSistemas = new Jefe("Gerente Sistemas");
-            IEmpleado GerenteGeneral = new Jefe("Gerente General");
-            IEmpleado GerenteVentas = new Jefe("Gerente Ventas");
 
-            GerenteSistemas.AgregarHijo(empleado1);
-            GerenteSistemas.AgregarHijo(empleado2);
-            GerenteVentas.AgregarHijo(empleado3);
-            GerenteVentas.AgregarHijo(empleado4);
-            GerenteGeneral.AgregarHijo(GerenteSistemas);
-            GerenteGeneral.AgregarHijo(GerenteVentas);
+            Usuario user1 = new Usuario("agustin");
+            Usuario user2 = new Usuario("nicolas");
+            Usuario user3 = new Usuario("agostina");
 
-            root.AgregarHijo(GerenteGeneral);
+            Subasta subaste = new Subasta();
+
+            subaste.agregar(user1);
+            subaste.agregar(user2);
+            subaste.agregar(user3);
 
 
-            Console.WriteLine("Estructura de empleados:" + root.ObtenerCantidadHijos());
-            Console.WriteLine("Cantidad de empleados de el gerente general:" + GerenteGeneral.ObtenerCantidadHijos());
-            Console.WriteLine("Cantidad de empleados de el gerente de sistemas:" + GerenteSistemas.ObtenerCantidadHijos());
+            subaste.Realizaroferta(200, user1);
+            subaste.Realizaroferta(300, user2);
+            subaste.Realizaroferta(259, user3);
 
-            root.MostrarJerarquia();
+           
+
 
 
 

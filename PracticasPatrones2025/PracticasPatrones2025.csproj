@@ -52,6 +52,9 @@
     <Compile Include="Abstract Factory\MonitorOfi.cs" />
     <Compile Include="Abstract Factory\TecladoGamer.cs" />
     <Compile Include="Abstract Factory\TecladoOfi.cs" />
+    <Compile Include="Archivos\Directorio.cs" />
+    <Compile Include="Archivos\IComponent.cs" />
+    <Compile Include="Archivos\Leaf.cs" />
     <Compile Include="Composite\IEmpleado.cs" />
     <Compile Include="Composite\Jefe.cs" />
     <Compile Include="Composite\Empleado.cs" />
@@ -61,6 +64,10 @@
     <Compile Include="FactoryMethod\IDocument.cs" />
     <Compile Include="FactoryMethod\PDF.cs" />
     <Compile Include="FactoryMethod\Word.cs" />
+    <Compile Include="Observador\Usuario.cs" />
+    <Compile Include="Observador\IUsuario.cs" />
+    <Compile Include="Observador\ISubasta.cs" />
+    <Compile Include="Observador\Subaste.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\SessionManager.cs" />
